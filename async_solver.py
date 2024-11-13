@@ -200,11 +200,13 @@ class AsyncGeetestSolver:
                             verify_text = await verify_response.text()
                             verify_data = json.loads(verify_text.split(f"{callback_name}(")[1][:-1])
                             payload = verify_data.get('data', {}).get('payload', '')
-                            
+                            self.loader.stop()
+
                             if self.debug:
                                 self.log.debug(f"Verification successful")
                                 self.log.debug(f"Full response: {verify_text}")
                             
+                           
                             self.log.message(
                                 "Geetest",
                                 f"Successfully solved captcha: {payload[:65]}...",
@@ -218,6 +220,7 @@ class AsyncGeetestSolver:
                                 status="success"
                             )
                         else:
+                            self.loader.stop()
                             if self.debug:
                                 self.log.debug(f"Verification failed with status {verify_response.status}")
                                 verify_text = await verify_response.text()
@@ -264,8 +267,7 @@ if __name__ == "__main__":
     
     async def main():
         result = await solve_geetest(
-            sitekey="e392e1d7fd421dc63325744d5a2b9c73",
-            debug=True
+            sitekey="e392e1d7fd421dc63325744d5a2b9c73"
         )
         print(result)
 

@@ -199,6 +199,7 @@ class GeetestSolver:
             if verify_response.status_code == 200:
                 verify_data = json.loads(verify_response.text.split(f"{callback_name}(")[1][:-1])
                 payload = verify_data.get('data', {}).get('payload', '')
+                self.loader.stop()
                 
                 if self.debug:
                     self.log.debug(f"Verification successful")
@@ -210,6 +211,7 @@ class GeetestSolver:
                     start=start_time,
                     end=time.time()
                 )
+           
                 
                 return GeetestResult(
                     response=verify_response.text,
@@ -217,6 +219,7 @@ class GeetestSolver:
                     status="success"
                 )
             else:
+                self.loader.stop()
                 if self.debug:
                     self.log.debug(f"Verification failed with status {verify_response.status_code}")
                     self.log.debug(f"Response: {verify_response.text}")
@@ -259,8 +262,7 @@ def solve_geetest(sitekey: str, debug: bool = False) -> Dict:
 
 if __name__ == "__main__":
     result = solve_geetest(
-        sitekey="e392e1d7fd421dc63325744d5a2b9c73",
-        debug=True
+        sitekey="e392e1d7fd421dc63325744d5a2b9c73"
     )
     print(result)
 
