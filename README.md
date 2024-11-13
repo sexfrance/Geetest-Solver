@@ -2,7 +2,7 @@
  
   <h2 align="center">Geetest v4 CAPTCHA Solver</h2>
   <p align="center">
-A Python-based solution for solving Geetest v4 CAPTCHA challenges efficiently. The script provides both synchronous and asynchronous options to handle the challenges, with an API interface for integration.
+A request based Python solution for solving Geetest v4 CAPTCHA challenges efficiently. The script provides both synchronous and asynchronous options to handle the challenges, with an API interface for integration.
     <br />
     <br />
     <a href="https://discord.cyberious.xyz">💬 Discord</a>
@@ -50,7 +50,7 @@ A Python-based solution for solving Geetest v4 CAPTCHA challenges efficiently. T
 
 #### 📹 Preview
 
-![Preview](https://i.imgur.com/YI6RZ5P.gif)
+![Preview](https://i.imgur.com/bFP24ch.gif)
 
 ---
 
