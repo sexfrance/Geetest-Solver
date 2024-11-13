@@ -1,0 +1,10 @@
+fastapi>=0.68.0
+uvicorn>=0.15.0
+pydantic>=1.8.0
+python-multipart>=0.0.5
+aiohttp>=3.8.0
+pillow>=8.0.0
+imagehash>=4.2.0
+pycryptodome>=3.10.0
+rsa>=4.7.0
+logmagix>=1.0.0
